@@ -1,0 +1,24 @@
+<div class='center'>
+<h1>My Insta</h1>
+
+<%= image_tag "insta.png", size: '60x60' %>
+<%= form_for Photo.new do |f| %>
+  <label>select
+    <%= f.file_field :picture, style: 'display:none;' %>
+  </label>
+  &nbsp;
+  <%= f.submit 'create' %>
+<% end %>
+<br>
+
+<% @photos.each_slice(3) do |p_group| %>
+  <div class='grid'>
+    <% p_group.each do |p|%>
+      <div class='item-container'>
+        <%= image_tag p.picture, class: :item if p.picture.present? %>
+        <%= link_to 'x', photo_path(p), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+</div>

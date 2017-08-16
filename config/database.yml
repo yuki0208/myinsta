@@ -1,0 +1,29 @@
+ development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: myinsta_development
+  pool: 5
+  username: rails
+  password: yuukunndaisuki
+  host: localhost
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: myinsta_test
+  pool: 5
+  username: rails
+  password: yuukunndaisuki
+  host: localhost
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: myinsta_production
+  pool: 5
+  username: rails
+  password: yuukunndaisuki
+  host: localhost

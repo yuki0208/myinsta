@@ -28,8 +28,10 @@ class PhotosController < ApplicationController
   def update
     @photo = Photo.find(params[:id])
     if @photo.update(photo_params)
+      flash[:success] = ["「#{@photo.comment}」にしました"]
       redirect_to @photo
     else 
+      flash[:alert] = @photo.errors.full_messages
       render 'edit'
     end
   end

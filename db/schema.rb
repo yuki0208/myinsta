@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170816071842) do
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "comment"
   end
 
 end

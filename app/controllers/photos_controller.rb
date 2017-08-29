@@ -10,7 +10,7 @@ class PhotosController < ApplicationController
 
   def destroy
     Photo.find(params[:id]).destroy
-    redirect_to photo_path
+    redirect_to root_path
   end   
 
   def photo_params

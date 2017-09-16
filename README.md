@@ -1,25 +1,6 @@
-# README
+# MyInsta
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails で作った　PCの写真から好きな写真を選択し、投稿するとインスタグラム風に写真を表示させるアプリ
 
-Things you may want to cover:
+写真をクリックするとその写真とコメントをみることができ、コメントを編集することができる
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# myinsta

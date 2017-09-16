@@ -5,7 +5,7 @@
   database: myinsta_development
   pool: 5
   username: rails
-  password: yuukunndaisuki
+  password: <%= ENV["DATABASE_PASS"] %>
   host: localhost
 
 test:
@@ -15,7 +15,7 @@ test:
   database: myinsta_test
   pool: 5
   username: rails
-  password: yuukunndaisuki
+  password: <%= ENV["DATABASE_PASS"] %>
   host: localhost
 
 production:
@@ -25,5 +25,5 @@ production:
   database: myinsta_production
   pool: 5
   username: rails
-  password: yuukunndaisuki
+  password: <%= ENV["DATABASE_PASS"] %>
   host: localhost

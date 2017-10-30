@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  
+
   def index
     @photos = Photo.order(created_at: :desc)
   end
@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
   def destroy
     Photo.find(params[:id]).destroy
     redirect_to root_path
-  end   
+  end
 
   def photo_params
     params.require(:photo).permit(:picture, :comment)
@@ -30,7 +30,7 @@ class PhotosController < ApplicationController
     if @photo.update(photo_params)
       flash[:success] = ["「#{@photo.comment}」にしました"]
       redirect_to @photo
-    else 
+    else
       flash[:alert] = @photo.errors.full_messages
       render 'edit'
     end

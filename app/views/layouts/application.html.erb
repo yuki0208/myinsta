@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myinsta</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <% flash.each do |k, messages| %>     
+   <body>
+    <% flash.each do |k, messages| %>
       <% messages.each do |message| %>
         <div class="<%= k %>">
           <%= message %>
           </div>
       <% end %>
     <% end %>
-
     <%= yield %>
   </body>
 </html>

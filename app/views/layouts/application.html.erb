@@ -5,15 +5,13 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
   </head>
-   <body>
-    <% flash.each do |k, messages| %>
-      <% messages.each do |message| %>
-        <div class="<%= k %>">
-          <%= message %>
-          </div>
-      <% end %>
-    <% end %>
-    <%= yield %>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

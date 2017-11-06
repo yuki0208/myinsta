@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 20171104033743) do
 
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "picture"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "comment"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

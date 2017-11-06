@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'noreplay@myinsta.com'
+  default from: "norepl@myinsta.com"
   layout 'mailer'
 end

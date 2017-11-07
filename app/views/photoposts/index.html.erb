@@ -2,23 +2,23 @@
 <h1>My Insta</h1>
 
 <%= image_tag "insta.png", size: '60x60' %>
-<%= form_for Photo.new do |f| %>
+<%= form_for @photopost do |f| %>
   <label>select
     <%= f.file_field :picture, style: 'display:none;' %>
   </label>
   &nbsp;
   <%= f.submit 'create' %>
 <% end %>
-<br>
 
-<% @photos.each_slice(3) do |p_group| %>
+<br>
+<% @photoposts.each_slice(3) do |p_group| %>
   <div class='grid'>
     <% p_group.each do |p|%>
       <div class='item-container'>
-        <%= link_to photo_path(p) do %>
+        <%= link_to photopost_path(p) do %>
           <%= image_tag p.picture, class: :item if p.picture.present? %>
         <% end %>
-        <%= link_to 'x', photo_path(p), method: :delete, class: 'delete_btn', data: {confirm: "本当に削除しますか？"} %>
+        <%= link_to 'x', photopost_path(p), method: :delete, class: 'delete_btn', data: {confirm: "本当に削除しますか？"} %>
       </div>
     <% end %>
   </div>

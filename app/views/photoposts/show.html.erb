@@ -1,0 +1,11 @@
+<div class="center">
+  <%= image_tag @photopost.picture, class: 'big-item' if @photopost.picture.present? %>
+  <p>
+  <%= @photopost.comment %>
+  </p>
+  <br>
+  <%= link_to 'edit', edit_photopost_path(@photopost), :style=>"color:purple;" %> 
+  <%= image_tag "insta.png", size: '60x60' %>
+  <%= link_to 'back', '/', :style=>"color:purple;" %>
+</div>
+

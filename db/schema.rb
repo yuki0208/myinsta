@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106114502) do
+ActiveRecord::Schema.define(version: 20171107085450) do
+
+  create_table "photoposts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "picture"
+    t.text "comment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_photoposts_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_photoposts_on_user_id"
+  end
 
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "picture"
@@ -35,4 +45,5 @@ ActiveRecord::Schema.define(version: 20171106114502) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "photoposts", "users"
 end

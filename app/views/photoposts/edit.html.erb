@@ -1,0 +1,9 @@
+<h1>edit</h1>
+<%= form_for @photopost do |f| %>
+  <%= f.text_field :comment, id: :photopost_comment %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Show', @photopost %> |
+<%= link_to 'Back', root_path %>
+

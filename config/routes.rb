@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'password_resets/new'
 
-  get 'password_resets/edit'
-
-  get 'sessions/new'
+  get 'photoposts/index'
 
   root 'static_pages#home'
   get '/home' => 'static_pages#home'
@@ -17,7 +14,7 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :photos, except: [:new]
-    get 'photos/index'
+  resources :photoposts
+    get 'photoposts/index'
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 end

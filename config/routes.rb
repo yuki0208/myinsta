@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'photoposts/index'
-
   root 'static_pages#home'
   get '/home' => 'static_pages#home'
   get '/help' => 'static_pages#help'
@@ -16,5 +14,8 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :photoposts
     get 'photoposts/index'
+  resources :photoposts do
+    resources :likes, only: [:create, :destroy]
+  end
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 end

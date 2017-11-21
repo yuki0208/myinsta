@@ -1,9 +1,10 @@
 <h1>edit</h1>
 <%= form_for @photopost do |f| %>
-  <%= f.text_field :comment, id: :photopost_comment %>
-  <%= f.submit %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment, id: :photopost_comment, class: 'form-control' %>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>
-
-<%= link_to 'Show', @photopost %> |
-<%= link_to 'Back', root_path %>
-
+<br>
+  <%= link_to 'Show', @photopost, :style=>"color:purple;" %>
+  <%= image_tag "insta.png", size: '60x60' %>
+  <%= link_to 'Index', photoposts_path, :style=>"color:purple;" %>

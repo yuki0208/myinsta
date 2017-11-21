@@ -10,6 +10,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @photoposts = @user.photoposts.order(created_at: :desc)
+    @likes = Like.where(photopost_id: params[:photopost_id])
   end
 
   def new
@@ -54,11 +56,8 @@ class UsersController < ApplicationController
         :name, :email, :password, 
         :password_confirmation)
     end
- 
-    # 正しいユーザーかどうか確認
+
     def correct_user
-      # GET   /users/:id/edit
-      # PATCH /users/:id
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end

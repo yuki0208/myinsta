@@ -1,0 +1,12 @@
+<% @photoposts.each_slice(3) do |p_group| %>
+  <div class='grid'>
+    <% p_group.each do |p|%>
+      <div class='item-container'>
+        <%= link_to photopost_path(p) do %>
+          <%= image_tag p.picture, class: :item if p.picture.present? %>
+        <% end %>
+        <%= link_to_if current_user?(p.user), 'x', photopost_path(p), method: :delete, class: 'delete_btn', data: {confirm: "本当に削除しますか？"} {} %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

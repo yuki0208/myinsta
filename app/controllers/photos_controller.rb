@@ -2,10 +2,19 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.order(created_at: :desc)
+    @photopost = current_user.photoposts.build
   end
 
   def create
     Photo.create(photo_params)
+    @photopost = current_user.photoposts.new(photopost_params)
+    if @photopost.save
+      redirect_to photoposts_path
+    else
+      flash[:alert] = @photopost.errors.full_messages
+      @photoposts = Photopost.order(created_at: :desc)
+      render :index
+    end
   end
 
   def destroy

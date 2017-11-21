@@ -15,7 +15,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 60px;
+  margin-top: 100px;
 }
 
 section {
@@ -33,6 +33,41 @@ textarea {
   }
 }
 
+.jumbotron {
+    height: 700px;
+    background: linear-gradient(-45deg, rgba(255, 100, 0, 0.2), rgba(255, 0, 180, 0.2)), url(top.png) center;
+    background-size: cover;
+    position: fixed;
+    top: 46px;
+    width: 110%;
+    z-index: 0;
+    overflow: hidden;
+    left: -77px;
+}
+
+.jumbotron:before {
+  content: '';
+  background: inherit;/*設定した背景画像を継承する*/
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+  position: absolute;
+  /*ブラー効果で画像の端がボヤけた分だけ位置を調整*/
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;/*重なり順序を一番下にしておく*/
+}
+
+.top {
+  text-align: center;
+  margin-top: 230px;
+}
+
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,19 +75,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
+  font-size: 15em;
+  font-weight: bold;
+  letter-spacing: 2px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
 }
 
 p {
@@ -65,12 +100,10 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
+  text-align: left;
+  font-size: 2.5em;
   color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
+  letter-spacing: 1px;
   font-weight: bold;
   &:hover {
     color: white;
@@ -80,20 +113,18 @@ p {
 
 /* footer */
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+ footer {
+  margin-top: 60px; 
+  padding-top: 17px;
+  border-top: 3px solid #222;
+  color: #777;
   a {
-    color: $gray;
+    color: #555;
     &:hover {
-      color: $gray-darker;
+      color: #222;
     }
   }
-  small {
-    float: left;
-  }
+
   ul {
     float: right;
     list-style: none;
@@ -105,20 +136,21 @@ footer {
 }
 
 /* miscellaneous */
-
-.debug_dump {
+/* .debug_dump {
   clear: both;
   float: left;
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
 }
+/*
 
 /* sidebar */
 
 aside {
   section.user_info {
     margin-top: 20px;
+    margin-bottom: 40px;
   }
   section {
     padding: 10px 0;
@@ -152,18 +184,6 @@ aside {
 }
 
 /* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
-
 #error_explanation {
   color: red;
   ul {
@@ -205,3 +225,10 @@ input {
   }
 }
 
+/*.container {
+    width: 100%;
+    position: relative;
+    height: auto !important;
+    height: 100%;
+    min-height: 100%;
+} */

@@ -1,0 +1,10 @@
+<div class='center'>
+<%= image_tag "insta.png", size: '60x60' %>
+<%= form_for @photopost do |f| %>
+  <label>select
+    <%= f.file_field :picture, style: 'display:none;' %>
+  </label>
+  &nbsp;
+  <%= f.submit 'create' %>
+<% end %>
+</div>

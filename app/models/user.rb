@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   has_many :photoposts, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :liked_photoposts, through: :likes, source: :photopost
   attr_accessor :remember_token, :activation_token, :reset_token 
   before_save   :downcase_email
   before_create :create_activation_digest

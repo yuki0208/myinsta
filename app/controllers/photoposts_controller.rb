@@ -3,6 +3,7 @@ class PhotopostsController < ApplicationController
   before_action :correct_user, only: [:destroy, :edit]
 
   def index
+    @photoposts = Photopost.all
     @photoposts = Photopost.order(created_at: :desc)
     @photopost = current_user.photoposts.build
   end
@@ -27,7 +28,7 @@ class PhotopostsController < ApplicationController
 
   def show
     @photopost = Photopost.find(params[:id])
-    @likes = Like.where(photopost_id: params[:photopost_id])
+    @likes = Like.where(photopost_id: params[:id])
   end
 
   def edit

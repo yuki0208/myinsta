@@ -3,7 +3,7 @@
     <div class="comment">
       <%= @photopost.comment %>
     </div>
-    <%= render partial: 'likes/like' %>
+    <%= render partial: 'likes/like', locals: { photopost: @photopost, likes: @likes } %>
     <nav>
       <%= link_to 'User Page', @photopost.user %>
       <%= image_tag "insta.png", size: '60x60' %>

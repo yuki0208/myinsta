@@ -7,6 +7,7 @@
         <% end %>
         <%= link_to_if current_user?(p.user), 'x', photopost_path(p), method: :delete, class: 'delete_btn', data: {confirm: "本当に削除しますか？"} {} %>
       </div>
+        <%#= render partial: 'likes/like', locals: { photopost: p, likes: @likes } %>
     <% end %>
   </div>
 <% end %>

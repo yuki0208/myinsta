@@ -2,8 +2,8 @@
   <%= image_tag @photopost.picture, class: 'small-item' if @photopost.picture.present? %>
     <div class="comment">
       <%= @photopost.comment %>
-    </div>
-    <%= render partial: 'likes/like', locals: { photopost: @photopost, likes: @likes } %>
+    </div>    
+    <%= render partial: 'likes/like', locals: { photopost: @photopost } %>
     <nav>
       <%= link_to 'User Page', @photopost.user %>
       <%= image_tag "insta.png", size: '60x60' %>

@@ -114,21 +114,16 @@ p {
 /* footer */
 
  footer {
-  margin-top: 60px; 
+  margin-top: 60px;
   padding-top: 17px;
   border-top: 3px solid #222;
   color: #777;
-  a {
-    color: #555;
-    &:hover {
-      color: #222;
-    }
-  }
-
-  ul {
-    float: right;
-    list-style: none;
-    li {
+ ul {
+  float: left;
+  list-style: none;
+  margin-right: 10px;
+   li {
+      font-color: black;
       float: left;
       margin-left: 15px;
     }

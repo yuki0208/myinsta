@@ -1,17 +1,15 @@
-<div id="js-ajax-wraper">
-  <% if photopost.like_user(current_user.id) %>
-    <%= button_to photopost_like_path(photopost.likes.first, photopost_id: photopost.id), method: :delete, id: "like-button", remote: true do %>
-    <%= image_tag("icon_red_heart.png") %>
-    <span>
-    <%= photopost.likes_count %>
-    </span>
+<div class="like-link" id=<%= "like-link-#{photopost.id}" %>>
+  <% if current_user.likes.find_by(photopost_id: photopost.id) %>
+    <%= link_to unlike_path(photopost.id), method: :delete, remote: true do %>
+    <div class="btn btn-default glyphicon glyphicon-heart" id=<%= "heart-#{photopost.id}" %>>
+      <%= photopost.likes.count.to_s %>
+    </div>
+    <% end %>
+  <% else %>
+    <%= link_to like_path(photopost.id), method: :post, remote: true do %>
+    <div class="btn btn-default glyphicon glyphicon-heart-empty" id=<%= "heart-#{photopost.id}" %>>
+      <%= photopost.likes.count.to_s %>
+    </div>
+    <% end %>
   <% end %>
-<% else %>
-  <%= button_to photopost_likes_path(photopost_id: photopost.id), id: "like-button", remote: true do %>
-    <%= image_tag("icon_heart.png") %>
-    <span>
-      <%= photopost.likes_count %>
-    </span>
-  <% end %>
-<% end %>
 </div>

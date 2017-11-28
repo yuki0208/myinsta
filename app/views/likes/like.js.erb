@@ -1,4 +1,4 @@
 $("<%= @id_name %>").html('<%= escape_javascript(render("likes/like", photopost: @photopost )) %>');
-$("<%= @id_heart %>").removeClass('glyphicon-heart-empty');
-$("<%= @id_heart %>").addClass('glyphicon-heart');
+$("<%= @id_heart %>").removeClass('glyphicon-heart-empty').css("color","black");
+$("<%= @id_heart %>").addClass('glyphicon-heart').css("color","#ff0066f2");
 

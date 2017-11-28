@@ -12,10 +12,12 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :photoposts
-    get 'photoposts/index'
+
   resources :photoposts do
-    resources :likes, only: [:create, :destroy]
   end
+
+  post   '/like/:photopost_id' => 'likes#like',   as: 'like'
+  delete '/like/:photopost_id' => 'likes#unlike', as: 'unlike'
+
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 end

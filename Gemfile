@@ -36,6 +36,7 @@ gem 'fog', '~> 1.40.0'
 gem 'faker', '1.7.3'
 gem 'will_paginate', '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'jquery-turbolinks'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

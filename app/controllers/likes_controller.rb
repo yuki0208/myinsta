@@ -17,8 +17,5 @@ class LikesController < ApplicationController
    def set_variables
      @photopost = Photopost.find(params[:photopost_id])
      @id_name = "#like-link-#{@photopost.id}"
-     @id_heart = "#heart-#{@photopost.id}"
-     Rails.logger.info @id_name
-     Rails.logger.info @id_heart
    end
 end

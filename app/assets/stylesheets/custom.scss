@@ -13,9 +13,11 @@ $gray-medium-light: #eaeaea;
 }
 
 /* universal */
-
-body {
-  margin-top: 100px;
+html, body{
+    margin-top: 60px;
+    padding: 0;
+    width:100%;
+    height:100%;
 }
 
 section {

@@ -8,17 +8,14 @@ div.field_with_errors {
   display: inline;
 }
 
-.comments {
-    bottom: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding-left: 24px;
-    padding-right: 24px;
-    right: 0;
-    top: 160px;
-    width: 450px;
-    height: 450px;
-    position: fixed;
+.comment {
+    margin: 30px;
+    position: relative;
+    text-align: center;
+}
+
+.commentbox {
+    margin: 50px;
 }
 
 h1 {

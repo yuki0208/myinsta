@@ -5,13 +5,13 @@ class ContactsController < ApplicationController
 
   def confirm
     @contact = Contact.new(contact_params)
-    if @contact.valid?      
+    if @contact.valid?
       render :confirm
     else
       render :new
     end
   end
-  
+
   def create
     @contact = Contact.new(contact_params)
     ContactMailer.received_email(@contact).deliver

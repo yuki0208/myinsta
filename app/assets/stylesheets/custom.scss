@@ -223,8 +223,15 @@ aside {
 }
 
 .contact {
-  position: absolute;
-  margin-left: 400px;
+  @extend .col-sm-offset-3;
+  @extend .col-sm-6;
+  input[type="text"], textarea {
+    @extend .form-control;
+  }
+  input[type="submit"] {
+    right: 20px;
+    position: absolute;
+  }
 }
 
 /*.container {

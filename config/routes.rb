@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get '/home' => 'static_pages#home'
   get '/help' => 'static_pages#help'
   get '/about' => 'static_pages#about'
-  get '/contact' => 'static_pages#contact'
-  get '/inquiry' => 'inquiry#index'
-  post '/inquiry/confirm' => 'inquiry#comfirm'
-  post '/inquiry/thanks' => 'inquiry#thanks'
+  resource :contact, only: [:new, :create] do
+    post :confirm
+  end
+  get '/contact' => 'contacts#new'
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

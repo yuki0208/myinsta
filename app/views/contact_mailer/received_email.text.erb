@@ -1,10 +1,10 @@
  Webサイトからお問い合わせがありました。
 
 --------------------------
-Name: <%= @inquiry.name %>
-Email: <%= @inquiry.email %>
+Name: <%= @contact.name %>
+Email: <%= @contact.email %>
 Message:
-<%= @inquiry.message %>
+<%= simple_format @contact.message %>
 --------------------------
 
 Myinsta

@@ -1,0 +1,26 @@
+<div class="contact">
+  <%= form_for @contact, url: contact_path, method: :post do |f| %>
+    <div class="page-header">
+      <h1>お問い合わせ</h1>
+    </div>
+
+    <table class="table">
+      <tr>
+        <th>名前<span class="text-danger">（必須）</span></th>
+        <td><%= f.object.name %></td>
+      </tr>
+      <tr>
+        <th>メールアドレス<span class="text-danger">（必須）</span></th>
+        <td><%= f.object.email %></td>
+      </tr>
+      <tr>
+        <th>お問い合わせ内容</th>
+        <td><%= simple_format f.object.message %></td>
+      </tr>
+    </table>
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :email %>
+    <%= f.hidden_field :message %>
+    <%= f.submit '送信', class: 'btn btn-success' %>    
+  <% end %>
+</div>
